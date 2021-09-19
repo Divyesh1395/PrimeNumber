@@ -1,5 +1,5 @@
 
-package primenumber;
+package divyeshlibrary;
 
 import java.util.Scanner;
 
