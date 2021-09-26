@@ -1,6 +1,3 @@
-
-package primenumber;
-
 import java.util.Scanner;
 
 /**
@@ -33,7 +30,7 @@ public class PrimeNumber {
         else System.out.println("\n" + num + " is not a prime number");
     }
     
-    // Logic for prime numbers between given range.
+    //find out all prime numbers between given range.
     public static void primesInRange(){
         int start_Index;
         int end_Index;
@@ -48,11 +45,9 @@ public class PrimeNumber {
             end_Index = scan.nextInt();
             if(start_Index > end_Index){
                 System.out.println("start_Index must be less than end_Index");
-                continue;
             }
             else if(start_Index < 1){
                 System.out.println("Both numbers should be strictly positive");
-                continue;
             }
             else {
                 break;
@@ -62,8 +57,7 @@ public class PrimeNumber {
         System.out.print("\nPrime numbers between [ " + start_Index + " to " + end_Index + " ] are : ");
         
         for(int num=start_Index; num<=end_Index; num++){
-            if(num < 2) _isPrime = false;
-            else _isPrime = true;
+            _isPrime = true;
             int n = (int) Math.sqrt(num);
             for(int i=2; i<=n; i++){
                 if((num % i) == 0){
@@ -85,14 +79,13 @@ public class PrimeNumber {
                 System.out.println("Enter 0 to quit :");
                 Scanner scan = new Scanner(System.in);
                 int a = scan.nextInt();
-                if(a == 1) isPrime();
+                if(a == 0) break;
+                else if(a == 1) isPrime();
                 else if(a == 2) primesInRange();
-                else if(a == 0) break;
-                continue;
+                
             }
             catch(java.util.InputMismatchException e){
                 System.out.println("\n-----Only Numbers are allowed-----");
-                continue;
             }
         }     
     }
